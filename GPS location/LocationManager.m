@@ -45,6 +45,11 @@
             [_locationManager requestWhenInUseAuthorization];
         }*/
         //[_locationManager startUpdatingLocation];
+        
+        [[NSNotificationCenter defaultCenter] addObserverForName:@"startUpdatingLocation" object:nil queue:nil usingBlock:^(NSNotification *note) {
+            [_locationManager startUpdatingLocation];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        }];
     }
     else{
         
@@ -54,13 +59,13 @@
     }
 }
 
-- (void)startUpdatingLocation {
-    [_locationManager startUpdatingLocation];
++ (void)startUpdatingLocation {
+    [LocationManager new];
 }
 
-- (void)stopUpdatingLocation {
+/*+ (void)stopUpdatingLocation {
     [_locationManager stopUpdatingLocation];
-}
+}*/
 
 /*- (void)requestWhenInUseAuthorization {
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
@@ -93,7 +98,7 @@
             
         case kCLAuthorizationStatusAuthorizedWhenInUse:
             NSLog(@"Authorized");
-            [_locationManager startUpdatingLocation];
+            //[_locationManager startUpdatingLocation];
             break;
             
         case kCLAuthorizationStatusDenied: {
@@ -152,6 +157,8 @@
                        //NSLog(@"%@", placemark);
                        
                        if (accuracy <= 10.f) {
+                           [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                           [_locationManager stopUpdatingLocation];
                            [[NSNotificationCenter defaultCenter] postNotificationName:@"LocationManagerDidReceiveCityName" object:placemark];
                        }
                    }];

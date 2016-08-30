@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController {
     __weak IBOutlet UILabel *city;
     __weak IBOutlet UILabel *street;
+    __weak IBOutlet UIButton *getLocation;
 }
 - (IBAction)getLocation:(id)sender;
 
