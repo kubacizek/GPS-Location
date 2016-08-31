@@ -90,7 +90,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    /*NSLog(@"%s", __PRETTY_FUNCTION__);
     switch (status) {
         case kCLAuthorizationStatusNotDetermined:
             NSLog(@"NotDetermined");
@@ -103,16 +103,15 @@
             
         case kCLAuthorizationStatusDenied: {
             NSLog(@"Denied");
-            NSUserDefaults *myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.jrm"];
-            [myDefaults setBool:NO forKey:@"citygps"];
-            [myDefaults synchronize];
             break;
         }
             
         default:
             NSLog(@"Unhandled authorization status");
             break;
-    }
+    }*/
+    _authorizationStatus = status;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"didChangeAuthorizationStatus" object:nil];
 }
 
 /*- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {

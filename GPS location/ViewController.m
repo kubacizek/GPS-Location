@@ -8,9 +8,13 @@
 
 #import "ViewController.h"
 #import "LocationManager.h"
+#import "Utilities.h"
+#import <CoreLocation/CoreLocation.h>
 #import <AddressBookUI/AddressBookUI.h>
 
-@interface ViewController ()
+@interface ViewController () {
+    NSTimer *timer;
+}
 
 @end
 
@@ -18,7 +22,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     //[LocationManager sharedInstance];
+    
+    /*CLAuthorizationStatus status = [LocationManager sharedInstance].authorizationStatus;
+    NSLog(@"%d", status);*/
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"didChangeAuthorizationStatus" object:nil queue:nil usingBlock:^(NSNotification *note) {
+        
+        NSString *nocity = @"City: GPS not available";
+        NSString *nostreet = @"Street: GPS not available";
+        
+        switch ([LocationManager sharedInstance].authorizationStatus) {
+            case kCLAuthorizationStatusNotDetermined:
+                NSLog(@"NotDetermined");
+                city.text = nocity;
+                street.text = nostreet;
+                getLocation.enabled = NO;
+                break;
+                
+            case kCLAuthorizationStatusAuthorizedWhenInUse:
+                NSLog(@"Authorized");
+                //[_locationManager startUpdatingLocation];
+                break;
+                
+            case kCLAuthorizationStatusDenied: {
+                NSLog(@"Denied");
+                city.text = nocity;
+                street.text = nostreet;
+                getLocation.enabled = NO;
+                break;
+            }
+                
+            default:
+                NSLog(@"Unhandled authorization status");
+                city.text = nocity;
+                street.text = nostreet;
+                getLocation.enabled = NO;
+                break;
+        }
+    }];
+    
+    
+    
+    //NSLog(@"status:%d@", );
     
     [[NSNotificationCenter defaultCenter] addObserverForName:@"LocationManagerDidReceiveCityName" object:nil queue:nil usingBlock:^(NSNotification *note) {
         CLPlacemark *placemark = note.object;
@@ -37,18 +84,8 @@
         street.text = [NSString stringWithFormat:@"Street: %@", ABCreateStringWithAddressDictionary(placemark.addressDictionary, NO)];
         
         getLocation.enabled = YES;
-        
-        NSError *error;
-        NSString *newStr = [NSString stringWithFormat:@"%@\n", placemark.locality];
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsDirectory = paths[0];
-        NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"log.txt"];
-        
-        NSString *oldStr = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
-        NSString *stringToWrite = [NSString stringWithFormat:@"%@%@", oldStr, newStr];
-        
-        
-        [stringToWrite writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+        [timer invalidate];
+        [Utilities writeToFileText:placemark.locality];
         
         
         /*NSError *error;
@@ -78,9 +115,14 @@
 
 
 - (IBAction)getLocation:(id)sender {
-    [LocationManager sharedInstance];
+    timer = [NSTimer scheduledTimerWithTimeInterval:30.f target:self selector:@selector(gpstimeout) userInfo:nil repeats:NO];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"startUpdatingLocation" object:nil];
     getLocation.enabled = NO;
+}
+
+- (void)gpstimeout {
+    city.text = @"City: GPS timeout";
+    street.text = @"Street: GPS timeout";
 }
 
 @end

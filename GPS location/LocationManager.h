@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSString *longitude;
 @property (strong, nonatomic) NSString *latitude;
 @property (strong, nonatomic) CLLocation *currentLocation;
+@property (nonatomic) CLAuthorizationStatus authorizationStatus;
 
 + (instancetype)sharedInstance;
 + (void)addObserverForLocationManagerDidReceiveCityName;

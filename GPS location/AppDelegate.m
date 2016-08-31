@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //[LocationManager sharedInstance];
+    [LocationManager sharedInstance];
     //[LocationManager addObserverForLocationManagerDidReceiveCityName];
     return YES;
 }
