@@ -18,6 +18,7 @@
     NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"log.txt"];
     
     NSString *oldStr = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
+    if (!oldStr) { oldStr = @""; }
     NSString *stringToWrite = [NSString stringWithFormat:@"%@%@", oldStr, newStr];
     
     

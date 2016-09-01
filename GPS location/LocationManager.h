@@ -19,7 +19,5 @@
 @property (nonatomic) CLAuthorizationStatus authorizationStatus;
 
 + (instancetype)sharedInstance;
-/*+ (void)addObserverForLocationManagerDidReceiveCityName;
-+ (void)addObserverForLocationManagerDidReceiveCityNameWCompletion:(void (^)(void))completionBlock;*/
 
 @end

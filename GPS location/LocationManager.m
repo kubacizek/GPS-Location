@@ -64,7 +64,7 @@
     location =  [manager location];
     
     float accuracy = newLocation.horizontalAccuracy;
-    NSLog(@"accuracy: %f", accuracy);
+    //NSLog(@"accuracy: %f", accuracy);
     
     CLLocationCoordinate2D coordinate = [location coordinate];
     _currentLocation = [[CLLocation alloc] init];
@@ -92,29 +92,5 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"LocationManagerDidUpdateLocation" object:location];
 }
-
-/*+ (void)addObserverForLocationManagerDidReceiveCityNameWCompletion:(void (^)(void))completionBlock {
-    [[NSNotificationCenter defaultCenter] addObserverForName:@"LocationManagerDidReceiveCityName" object:nil queue:nil usingBlock:^(NSNotification *note) {
-        CLPlacemark *placemark = note.object;
-        NSLog(@"dopravce: %@  |  mesto: %@ -- %@", @"", placemark.locality, placemark.subAdministrativeArea);
-    }];
-}
-
-+ (void)addObserverForLocationManagerDidReceiveCityName {
-    [[NSNotificationCenter defaultCenter] addObserverForName:@"LocationManagerDidReceiveCityName" object:nil queue:nil usingBlock:^(NSNotification *note) {
-        CLPlacemark *placemark = note.object;
-        
-        NSLog(@"placemark.ISOcountryCode %@",placemark.ISOcountryCode);
-        NSLog(@"placemark.country %@",placemark.country);
-        NSLog(@"placemark.postalCode %@",placemark.postalCode);
-        NSLog(@"placemark.administrativeArea %@",placemark.administrativeArea);
-        NSLog(@"placemark.locality %@",placemark.locality);
-        NSLog(@"placemark.subLocality %@",placemark.subLocality);
-        NSLog(@"placemark.street %@",ABCreateStringWithAddressDictionary(placemark.addressDictionary, NO));
-        NSLog(@"placemark.subThoroughfare %@",placemark.subThoroughfare);
-        
-    }];
-}*/
-
 
 @end
