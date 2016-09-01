@@ -18,18 +18,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City: Prague" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcw-oG-0up">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street: Unknown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zv-Wf-3QP">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2u-Hs-jbF">
-                                <state key="normal" title="GET_LOCATION"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inf-Ka-H8C">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City: Prague" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lcw-oG-0up">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street: Unknown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Zv-Wf-3QP">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="lcw-oG-0up" firstAttribute="trailing" secondItem="6Zv-Wf-3QP" secondAttribute="trailing" id="4S5-Fq-FjF"/>
+                                    <constraint firstAttribute="width" constant="239" id="5Tg-NT-LRT"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Zv-Wf-3QP" secondAttribute="bottom" constant="7" id="GwF-tW-aQg"/>
+                                    <constraint firstItem="lcw-oG-0up" firstAttribute="leading" secondItem="inf-Ka-H8C" secondAttribute="leading" constant="28" id="Iye-3I-ZHk"/>
+                                    <constraint firstItem="6Zv-Wf-3QP" firstAttribute="leading" secondItem="inf-Ka-H8C" secondAttribute="leading" constant="13" id="JG7-t7-llJ"/>
+                                    <constraint firstItem="lcw-oG-0up" firstAttribute="trailing" secondItem="inf-Ka-H8C" secondAttribute="trailingMargin" constant="7" id="fhC-Yc-Heo"/>
+                                    <constraint firstItem="6Zv-Wf-3QP" firstAttribute="top" secondItem="lcw-oG-0up" secondAttribute="bottom" constant="30" id="ukA-4S-hRX"/>
+                                    <constraint firstItem="lcw-oG-0up" firstAttribute="top" secondItem="inf-Ka-H8C" secondAttribute="topMargin" id="yYG-8M-Tnn"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2u-Hs-jbF">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="wBZ-Ce-aO3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Get location"/>
                                 <connections>
                                     <action selector="getLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TUB-qI-MMm"/>
                                 </connections>
@@ -37,14 +56,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lcw-oG-0up" firstAttribute="trailing" secondItem="6Zv-Wf-3QP" secondAttribute="trailing" id="7s9-HW-CkC"/>
-                            <constraint firstItem="n2u-Hs-jbF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JjZ-M8-JAY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lcw-oG-0up" secondAttribute="trailing" constant="11" id="LQ0-oD-Hq7"/>
-                            <constraint firstItem="lcw-oG-0up" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="66" id="MYk-ky-QYQ"/>
-                            <constraint firstItem="6Zv-Wf-3QP" firstAttribute="top" secondItem="lcw-oG-0up" secondAttribute="bottom" constant="30" id="lDA-F0-4k6"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6Zv-Wf-3QP" secondAttribute="bottom" constant="170" id="mGd-z7-YEB"/>
-                            <constraint firstItem="n2u-Hs-jbF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="128" id="qro-Oe-S2J"/>
-                            <constraint firstItem="6Zv-Wf-3QP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="rIp-wh-LcH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="inf-Ka-H8C" secondAttribute="bottom" constant="124" id="GDb-Zd-Mey"/>
+                            <constraint firstItem="n2u-Hs-jbF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="121" id="Iox-YW-Ydq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="inf-Ka-H8C" secondAttribute="trailing" constant="24.5" id="Lp1-3M-o7n"/>
+                            <constraint firstItem="n2u-Hs-jbF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="91" id="Yx6-Bw-Rz7"/>
                         </constraints>
                     </view>
                     <connections>
@@ -55,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.875" y="92.957746478873247"/>
+            <point key="canvasLocation" x="160.400390625" y="109.15988891093036"/>
         </scene>
     </scenes>
 </document>

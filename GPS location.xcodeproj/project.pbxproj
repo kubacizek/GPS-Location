@@ -15,6 +15,7 @@
 		8CDE19FA1D75D2BC00B1CE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDE19F81D75D2BC00B1CE62 /* LaunchScreen.storyboard */; };
 		8CDE1A031D75D4F800B1CE62 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDE1A021D75D4F700B1CE62 /* LocationManager.m */; };
 		8CDE1A071D76EA2400B1CE62 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDE1A061D76EA2400B1CE62 /* Utilities.m */; };
+		8CDE1A0B1D78439400B1CE62 /* MainAL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDE1A0A1D78439400B1CE62 /* MainAL.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8CDE1A021D75D4F700B1CE62 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		8CDE1A051D76EA2400B1CE62 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		8CDE1A061D76EA2400B1CE62 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		8CDE1A0A1D78439400B1CE62 /* MainAL.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainAL.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				8CDE1A061D76EA2400B1CE62 /* Utilities.m */,
 				8CDE1A011D75D4F700B1CE62 /* LocationManager.h */,
 				8CDE1A021D75D4F700B1CE62 /* LocationManager.m */,
+				8CDE1A0A1D78439400B1CE62 /* MainAL.storyboard */,
 				8CDE19F31D75D2BC00B1CE62 /* Main.storyboard */,
 				8CDE19F61D75D2BC00B1CE62 /* Assets.xcassets */,
 				8CDE19F81D75D2BC00B1CE62 /* LaunchScreen.storyboard */,
@@ -156,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CDE1A0B1D78439400B1CE62 /* MainAL.storyboard in Resources */,
 				8CDE19FA1D75D2BC00B1CE62 /* LaunchScreen.storyboard in Resources */,
 				8CDE19F71D75D2BC00B1CE62 /* Assets.xcassets in Resources */,
 				8CDE19F51D75D2BC00B1CE62 /* Main.storyboard in Resources */,
