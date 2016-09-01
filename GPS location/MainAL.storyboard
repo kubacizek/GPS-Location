@@ -18,58 +18,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fy6-NY-xD3" userLabel="Green">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fy6-NY-xD3" userLabel="Container">
                                 <frame key="frameInset" minX="20" minY="20" width="560" height="282"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zw-Th-qNt">
                                         <frame key="frameInset" minX="230" minY="126" width="100" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Get location"/>
+                                        <connections>
+                                            <action selector="getLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FEc-Yf-a1B"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.57702453009999999" green="0.81003393310000005" blue="0.4594054924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="3zw-Th-qNt" firstAttribute="centerY" secondItem="fy6-NY-xD3" secondAttribute="centerY" id="JAP-pq-ubI"/>
                                     <constraint firstItem="3zw-Th-qNt" firstAttribute="centerX" secondItem="fy6-NY-xD3" secondAttribute="centerX" id="WzL-tE-7k7"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ff-Hg-aaG" userLabel="Orange">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ff-Hg-aaG" userLabel="Container">
                                 <frame key="frameInset" minX="20" minY="315" width="560" height="277"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XSb-XW-09r" userLabel="labelContainer">
                                         <frame key="frameInset" minY="74" width="560" height="128"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjE-u9-PLT">
-                                                <frame key="frameInset" minX="178" minY="54" width="57" height="21"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Street: not loaded" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjE-u9-PLT">
+                                                <frame key="frameInset" minX="153" minY="54" width="255" height="21"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="57" id="xxY-Qe-9ed"/>
+                                                    <constraint firstAttribute="width" constant="255" id="wXM-WA-szd"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cg-Qy-AJX">
-                                                <frame key="frameInset" minX="180" minY="8" width="57" height="21"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="City: not loaded" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cg-Qy-AJX">
+                                                <frame key="frameInset" minX="153" minY="8" width="255" height="21"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="57" id="k3x-2r-m0W"/>
+                                                    <constraint firstAttribute="width" constant="255" id="3Dw-47-1Ed"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="0UU-eR-t07"/>
                                             <constraint firstAttribute="centerX" secondItem="DjE-u9-PLT" secondAttribute="centerX" id="45B-Z0-69A">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
                                             </constraint>
-                                            <constraint firstAttribute="centerX" secondItem="1cg-Qy-AJX" secondAttribute="centerX" constant="-2" id="8bj-4y-jSa">
-                                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
-                                            </constraint>
-                                            <constraint firstItem="1cg-Qy-AJX" firstAttribute="top" secondItem="XSb-XW-09r" secondAttribute="top" constant="8" id="FS0-pZ-sU1"/>
                                             <constraint firstItem="1cg-Qy-AJX" firstAttribute="top" secondItem="XSb-XW-09r" secondAttribute="top" constant="8" id="POW-sc-OZ0"/>
                                             <constraint firstAttribute="centerY" secondItem="DjE-u9-PLT" secondAttribute="centerY" id="QyN-hW-8rv"/>
+                                            <constraint firstItem="DjE-u9-PLT" firstAttribute="top" secondItem="1cg-Qy-AJX" secondAttribute="bottom" constant="25" id="Ycb-mM-Akl"/>
+                                            <constraint firstItem="1cg-Qy-AJX" firstAttribute="centerX" secondItem="XSb-XW-09r" secondAttribute="centerX" id="qxF-cx-LVZ"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -80,8 +81,6 @@
                                         <variation key="heightClass=compact-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="0UU-eR-t07"/>
-                                                <include reference="8bj-4y-jSa"/>
-                                                <exclude reference="FS0-pZ-sU1"/>
                                                 <include reference="POW-sc-OZ0"/>
                                                 <include reference="45B-Z0-69A"/>
                                                 <include reference="QyN-hW-8rv"/>
@@ -89,7 +88,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.81003393310000005" green="0.40150103602283771" blue="0.18829830544677739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="XSb-XW-09r" firstAttribute="top" secondItem="6ff-Hg-aaG" secondAttribute="top" constant="74" id="CCc-Wj-8oi"/>
                                     <constraint firstItem="XSb-XW-09r" firstAttribute="centerY" secondItem="6ff-Hg-aaG" secondAttribute="centerY" id="QXR-aY-u9D"/>
@@ -154,10 +153,15 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="mQa-Zs-BBn"/>
+                    <connections>
+                        <outlet property="city" destination="1cg-Qy-AJX" id="RHc-Kx-zRf"/>
+                        <outlet property="getLocation" destination="3zw-Th-qNt" id="0OC-XI-1yb"/>
+                        <outlet property="street" destination="DjE-u9-PLT" id="LXz-gM-Gxv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100.78125" y="142.3828125"/>
+            <point key="canvasLocation" x="1100" y="141.2109375"/>
         </scene>
     </scenes>
 </document>

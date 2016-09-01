@@ -23,13 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //[LocationManager sharedInstance];
-    
-    /*CLAuthorizationStatus status = [LocationManager sharedInstance].authorizationStatus;
-    NSLog(@"%d", status);*/
-    
     [[NSNotificationCenter defaultCenter] addObserverForName:@"didChangeAuthorizationStatus" object:nil queue:nil usingBlock:^(NSNotification *note) {
-        
         NSString *nocity = @"City: GPS not available";
         NSString *nostreet = @"Street: GPS not available";
         
@@ -43,7 +37,9 @@
                 
             case kCLAuthorizationStatusAuthorizedWhenInUse:
                 NSLog(@"Authorized");
-                //[_locationManager startUpdatingLocation];
+                city.text = @"City: not loaded";
+                street.text = @"Street: not loaded";
+                getLocation.enabled = YES;
                 break;
                 
             case kCLAuthorizationStatusDenied: {
@@ -63,47 +59,33 @@
         }
     }];
     
-    
-    
-    //NSLog(@"status:%d@", );
-    
     [[NSNotificationCenter defaultCenter] addObserverForName:@"LocationManagerDidReceiveCityName" object:nil queue:nil usingBlock:^(NSNotification *note) {
         CLPlacemark *placemark = note.object;
         
-        
-        NSLog(@"placemark.ISOcountryCode %@",placemark.ISOcountryCode);
+        /*NSLog(@"placemark.ISOcountryCode %@",placemark.ISOcountryCode);
         NSLog(@"placemark.country %@",placemark.country);
         NSLog(@"placemark.postalCode %@",placemark.postalCode);
         NSLog(@"placemark.administrativeArea %@",placemark.administrativeArea);
         NSLog(@"placemark.locality %@",placemark.locality);
         NSLog(@"placemark.subLocality %@",placemark.subLocality);
         NSLog(@"placemark.street %@",ABCreateStringWithAddressDictionary(placemark.addressDictionary, NO));
-        NSLog(@"placemark.subThoroughfare %@",placemark.subThoroughfare);
+        NSLog(@"placemark.subThoroughfare %@",placemark.subThoroughfare);*/
         
-        city.text = [NSString stringWithFormat:@"City: %@", placemark.locality];
-        street.text = [NSString stringWithFormat:@"Street: %@", ABCreateStringWithAddressDictionary(placemark.addressDictionary, NO)];
+        if (placemark.locality) {
+            city.text = [NSString stringWithFormat:@"City: %@", placemark.locality];
+        } else {
+            city.text = @"City: Unknown";
+        }
+        
+        if (placemark.addressDictionary[@"FormattedAddressLines"][0]) {
+            street.text = [NSString stringWithFormat:@"Street: %@", placemark.addressDictionary[@"FormattedAddressLines"][0]];
+        } else {
+            street.text = @"Street: Unknown";
+        }
         
         getLocation.enabled = YES;
         [timer invalidate];
         [Utilities writeToFileText:placemark.locality];
-        
-        
-        /*NSError *error;
-        NSString *stringToWrite = @"1\n2\n3\n4";
-        //NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"log.txt"];
-        NSString *cesta = @"log.txt";
-        NSURL *groupContainerURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.jrm"];
-        NSString *sharedDirectory = [groupContainerURL path];
-        NSString *filePath = [sharedDirectory stringByAppendingPathComponent:cesta];
-        
-        [stringToWrite writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];*/
-        
-        /*NSString *cesta = [NSString stringWithFormat:@"%@_%@_%@", idDopravceParam, currentPack, nazevSouboru];
-        NSURL *groupContainerURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.jrm"];
-        NSString *sharedDirectory = [groupContainerURL path];
-        NSString *filePath = [sharedDirectory stringByAppendingPathComponent:cesta];
-        [data writeToFile:filePath atomically:YES];*/
-        
     }];
 }
 
@@ -123,6 +105,7 @@
 - (void)gpstimeout {
     city.text = @"City: GPS timeout";
     street.text = @"Street: GPS timeout";
+    getLocation.enabled = YES;
 }
 
 @end

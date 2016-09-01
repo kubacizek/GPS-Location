@@ -10,9 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface LocationManager : NSObject <CLLocationManagerDelegate> {
-    //CLLocationManager *locationManager;
-}
+@interface LocationManager : NSObject <CLLocationManagerDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSString *longitude;
@@ -21,7 +19,7 @@
 @property (nonatomic) CLAuthorizationStatus authorizationStatus;
 
 + (instancetype)sharedInstance;
-+ (void)addObserverForLocationManagerDidReceiveCityName;
-+ (void)addObserverForLocationManagerDidReceiveCityNameWCompletion:(void (^)(void))completionBlock;
+/*+ (void)addObserverForLocationManagerDidReceiveCityName;
++ (void)addObserverForLocationManagerDidReceiveCityNameWCompletion:(void (^)(void))completionBlock;*/
 
 @end

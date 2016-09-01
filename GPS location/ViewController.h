@@ -13,6 +13,7 @@
     __weak IBOutlet UILabel *street;
     __weak IBOutlet UIButton *getLocation;
 }
+
 - (IBAction)getLocation:(id)sender;
 
 @end

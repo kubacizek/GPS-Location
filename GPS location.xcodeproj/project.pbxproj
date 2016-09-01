@@ -16,6 +16,7 @@
 		8CDE1A031D75D4F800B1CE62 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDE1A021D75D4F700B1CE62 /* LocationManager.m */; };
 		8CDE1A071D76EA2400B1CE62 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDE1A061D76EA2400B1CE62 /* Utilities.m */; };
 		8CDE1A0B1D78439400B1CE62 /* MainAL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDE1A0A1D78439400B1CE62 /* MainAL.storyboard */; };
+		8CDE1A0F1D7853A700B1CE62 /* SMHAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDE1A0E1D7853A700B1CE62 /* SMHAlertController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		8CDE1A051D76EA2400B1CE62 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		8CDE1A061D76EA2400B1CE62 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		8CDE1A0A1D78439400B1CE62 /* MainAL.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainAL.storyboard; sourceTree = "<group>"; };
+		8CDE1A0D1D7853A700B1CE62 /* SMHAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMHAlertController.h; sourceTree = "<group>"; };
+		8CDE1A0E1D7853A700B1CE62 /* SMHAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMHAlertController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,7 @@
 		8CDE19E91D75D2BC00B1CE62 /* GPS location */ = {
 			isa = PBXGroup;
 			children = (
+				8CDE1A0C1D7853A700B1CE62 /* SMHAlertController */,
 				8CDE1A041D75D4FB00B1CE62 /* Model */,
 				8CDE19ED1D75D2BC00B1CE62 /* AppDelegate.h */,
 				8CDE19EE1D75D2BC00B1CE62 /* AppDelegate.m */,
@@ -98,6 +102,15 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		8CDE1A0C1D7853A700B1CE62 /* SMHAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				8CDE1A0D1D7853A700B1CE62 /* SMHAlertController.h */,
+				8CDE1A0E1D7853A700B1CE62 /* SMHAlertController.m */,
+			);
+			path = SMHAlertController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +191,7 @@
 				8CDE19EF1D75D2BC00B1CE62 /* AppDelegate.m in Sources */,
 				8CDE19EC1D75D2BC00B1CE62 /* main.m in Sources */,
 				8CDE1A071D76EA2400B1CE62 /* Utilities.m in Sources */,
+				8CDE1A0F1D7853A700B1CE62 /* SMHAlertController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
