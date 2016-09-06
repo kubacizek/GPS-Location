@@ -1,6 +1,6 @@
 //
 //  LocationManager.m
-//  JRm
+//  GPS location
 //
 //  Created by Kuba on 30.08.16.
 //  Copyright © 2016 Kuba. All rights reserved.
